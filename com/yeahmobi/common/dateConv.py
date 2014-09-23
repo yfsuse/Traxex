@@ -4,6 +4,7 @@ __author__ = 'jeff.yu'
 
 import time
 import datetime
+from random import choice
 
 
 def get_range():
@@ -13,23 +14,19 @@ def get_range():
     unix_start, unix_end = datetime_timestamp(lastDate), datetime_timestamp(currentDate)
     return unix_start, unix_end
 
+
 def timestamp_datetime(value):
     format = '%Y-%m-%d %H:%M:%S'
     value = time.localtime(value)
     dt = time.strftime(format, value)
     return dt
 
+
 def datetime_timestamp(dt):
     s = time.mktime(time.strptime(dt, '%Y-%m-%d %H:%M:%S'))
     return str(int(s))
 
-def get_timestamp():
-    """
-    :return:
-    """
-
-
 if __name__ == '__main__':
-    print get_timestamp()
+    pass
 
 
