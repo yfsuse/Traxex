@@ -4,6 +4,11 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="Yurnero" />
+    <orderEntry type="module" module-name="DemnokLannik" />
+    <orderEntry type="module" module-name="FaerieDragon" />
+    <orderEntry type="module" module-name="kunkka" />
+    <orderEntry type="module" module-name="Necromancer" />
   </component>
 </module>
 

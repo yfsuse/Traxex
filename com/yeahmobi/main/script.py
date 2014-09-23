@@ -17,10 +17,12 @@ def main():
     unix_start, unix_end = get_range()
 
     for case in case_list:
-        case = case.replace("-1", unix_start).replace("-2", unix_end)
+        case = case.replace("-1", unix_start).replace("-2", unix_end).replace(': ', ':').replace(', ', ',')
+        print case
         mysql_rsp = get_data("mysql", case)
         druid_rsp = get_data("druid", case)
-        print mysql_rsp + '\n' +druid_rsp
+        print mysql_rsp
+        print druid_rsp
 
 if __name__ == '__main__':
     main()

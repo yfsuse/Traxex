@@ -19,12 +19,17 @@ def timestamp_datetime(value):
     dt = time.strftime(format, value)
     return dt
 
-
 def datetime_timestamp(dt):
     s = time.mktime(time.strptime(dt, '%Y-%m-%d %H:%M:%S'))
     return str(int(s))
 
+def get_timestamp():
+    """
+    :return:
+    """
+
+
 if __name__ == '__main__':
-    print get_range()
+    print get_timestamp()
 
 
