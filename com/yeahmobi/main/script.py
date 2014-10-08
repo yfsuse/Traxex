@@ -5,10 +5,9 @@ __author__ = 'jeff.yu'
 
 
 from com.yeahmobi.common.sendMail import send_mail
-from com.yeahmobi.common.httpData import get_data
-from com.yeahmobi.common.requestParser import RequestParser
 from cases import Case
 from com.yeahmobi.common.dateConv import get_range
+from com.yeahmobi.common.dataManage import *
 
 
 def main():
@@ -19,10 +18,13 @@ def main():
     for case in case_list:
         case = case.replace("-1", unix_start).replace("-2", unix_end).replace(': ', ':').replace(', ', ',')
         print case
-        mysql_rsp = get_data("mysql", case)
+        # mysql_rsp = get_data("mysql", case)
         druid_rsp = get_data("druid", case)
-        print mysql_rsp
-        print druid_rsp
+        # mysql_data = list_to_json(mysql_rsp)
+        druid_data = list_to_json(druid_rsp)
+        # data_arrange(mysql_data, druid_data)
+        print druid_data
+        break
 
 if __name__ == '__main__':
     main()
