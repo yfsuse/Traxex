@@ -26,7 +26,6 @@ def get_data(query_type,  query_data):
     try:
         f = urllib2.build_opener().open(urllib2.Request(query_url, post_data), timeout=120)
     except Exception as e:
-        raise e
         print "{0}: can't get data [{1}]".format(HTTP_ERROR, e.message)
         exit(-1)
     content = f.read()
