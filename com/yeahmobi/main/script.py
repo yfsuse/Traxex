@@ -3,6 +3,10 @@
 
 __author__ = 'jeff.yu'
 
+import sys
+sys.path.append(sys.path[0].replace('/com/yeahmobi/main', ''))
+
+
 
 from com.yeahmobi.common.sendMail import send_mail
 from cases import Case
@@ -27,4 +31,5 @@ def main():
         break
 
 if __name__ == '__main__':
+    print sys.path[0]
     main()
