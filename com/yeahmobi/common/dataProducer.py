@@ -6,6 +6,7 @@ __author__ = 'jeff.yu'
 from random import choice
 from string import lowercase
 from string import digits
+import datetime
 
 
 """
@@ -48,7 +49,7 @@ from string import digits
 """
 
 
-def n_choice(seq, num):
+def n_choice(num):
     seq = lowercase + digits
     result = ''
     for i in range(num):
@@ -105,7 +106,10 @@ class DataProducer(object):
 
         """
         year = choice((2013, 2014))
-        month = choice(range(1, 12))
+        max_month = 12
+        if year == 2014:
+            max_month = datetime.date.today().month
+        month = choice(range(1, max_month))
         day = choice(range(1, 29))
         hour = choice(range(0, 24))
         minute = choice(range(0, 60))
@@ -256,8 +260,6 @@ class DataProducer(object):
     def set_conversion_time(self):
         if self.conversion == 1:
             self.conversion_time = self.timestamp
-        else:
-            self.click = 1
 
     def get_conversion_time(self):
         return self.conversion_time
@@ -317,7 +319,7 @@ class DataProducer(object):
         return self.sub8
 
     def set_click(self):
-        self.click = choice((0, 1))
+        self.click = 1
 
     def get_click(self):
         return self.click
@@ -361,6 +363,7 @@ class DataProducer(object):
         self.set_sub6()
         self.set_sub7()
         self.set_sub8()
+        self.set_real_ip()
         self.set_proxy_ip()
         self.set_payout()
         self.set_os_id()
