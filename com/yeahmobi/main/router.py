@@ -22,7 +22,9 @@ class Router(object):
         self.dataReceived = []
         for requestFile in requestBody:
             sendBody = "curl -X post http://{0}:8080/druid/v2/?pretty -H 'content-type: application/json' -d @{1}".format(brokerIp, requestFile)
+            print sendBody
             data = os.popen(sendBody).read()
+            print data
             self.dataReceived.append(data)
 
     def getJsonBody(self):
@@ -40,7 +42,3 @@ class Router(object):
 if __name__ == '__main__':
     router = Router()
     print router.check
-
-
-
-
