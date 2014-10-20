@@ -1,0 +1,26 @@
+{
+  "queryType" : "timeseries",
+  "dataSource" : "ymds_druid_datasource.5",
+  "intervals" : {
+    "type" : "LegacySegmentSpec",
+    "intervals" : [ "2014-10-15T00:00:00.000Z/2014-10-16T00:00:00.000Z" ]
+  },
+  "filter" : null,
+  "granularity" : {
+    "type" : "period",
+    "period" : "P1D",
+    "origin" : null,
+    "timeZone" : "UTC"
+  },
+  "aggregations" : [ {
+    "type" : "longSum",
+    "name" : "click",
+    "fieldName" : "click"
+  }, {
+    "type" : "longSum",
+    "name" : "conversion",
+    "fieldName" : "conversion"
+  } ],
+  "postAggregations" : [ ],
+  "context" : null
+}
