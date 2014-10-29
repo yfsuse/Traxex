@@ -3,7 +3,7 @@
   "dataSource" : "ymds_druid_datasource.0",
   "intervals" : {
     "type" : "LegacySegmentSpec",
-    "intervals" : [ "2014-10-15T00:00:00.000Z/2014-10-16T00:00:00.000Z" ]
+    "intervals" : [ "2014-10-28T00:00:00.000Z/2014-10-29T00:00:00.000Z" ]
   },
   "filter" : null,
   "granularity" : {
